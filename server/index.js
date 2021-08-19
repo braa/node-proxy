@@ -2,6 +2,9 @@ const express = require('express');
 
 const app = express();
 
+app.get('/', (req, res) => res.send('works!'));
+
+
 app.get('/v1/cryptocurrency/listings/latest', (req, res) => {
   const useSandbox = true;
 
