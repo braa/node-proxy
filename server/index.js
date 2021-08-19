@@ -32,6 +32,10 @@ app.get('/v1/cryptocurrency/listings/latest', (req, res) => {
   })
 });
 
+app.get('/test', (req, res) => {
+    res.send('test');
+});
+
 app.listen(3001, () =>
   console.log('Express server is running on localhost:3001')
 );
