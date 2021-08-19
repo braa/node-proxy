@@ -4,7 +4,7 @@ const port = 3000;
 
 app.get('/', (req, res) => res.send('Hello World!'));
 app.get('/v1/cryptocurrency/listings/latest', (req, res) => {
-    const useSandbox = true;
+    const useSandbox = false;
   
     let baseUrl = 'https://pro-api.coinmarketcap.com';
     let headers = {'X-CMC_PRO_API_KEY': '97b98a4a-8852-4a95-a00b-381ac2a6faaf'};
