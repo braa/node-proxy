@@ -3,6 +3,14 @@ const axios = require('axios')
 const app = express();
 const port = 3000;
 
+app.all('*', function(req, res, next) {
+  var origin = req.get('origin'); 
+  res.header('Access-Control-Allow-Origin', origin);
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+
 app.get('/', (req, res) => res.send('Hello World!'));
 app.get('/v1/cryptocurrency/listings/latest', (req, res) => {
     const useSandbox = false;
